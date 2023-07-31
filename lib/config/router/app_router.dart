@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:go_router/go_router.dart';
 
 import '../../presentation/screens/screens.dart';
@@ -20,4 +22,8 @@ final appRouter = GoRouter(
     name: CardsScreen.name,
     builder: (context, state) => const CardsScreen(),
   ),
+  // GoRoute(
+  //     path: '/users/:number',
+  //     builder: (context, state) => CardsScreen(number: state.pathParameters[]),
+  // ),
 ]);
