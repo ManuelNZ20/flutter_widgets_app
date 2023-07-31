@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_item.dart';
 import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
 
@@ -40,7 +41,8 @@ class _HomeView extends StatelessWidget {
             // Navigator.of(context).push(
             //   MaterialPageRoute(builder: (context) => ButtonsScreen(),)
             // );
-            Navigator.pushNamed(context, menuItem.link);
+            // Navigator.pushNamed(context, menuItem.link);
+            context.push(menuItem.link);
           },
         );
       },
