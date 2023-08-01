@@ -125,13 +125,13 @@ class _CardType3 extends StatelessWidget {
     return Card(
       color: colors.surfaceVariant,
       elevation: elevation,
-      child: Padding(padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
+      child: Padding(padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
       child: Column(
         children: [
           Align(
             alignment: Alignment.centerRight,
             child: IconButton(
-              icon: Icon(Icons.more_vert_rounded),
+              icon: const Icon(Icons.more_vert_rounded),
               onPressed: (){},
             ),
           ),
@@ -163,14 +163,14 @@ class _CardType4 extends StatelessWidget {
           Align(
             alignment: Alignment.topRight,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(20)
                 )
               ),
               child: IconButton(
-                icon: Icon(Icons.more_vert_rounded),
+                icon: const Icon(Icons.more_vert_rounded),
                 onPressed: (){},
               ),
             ),
