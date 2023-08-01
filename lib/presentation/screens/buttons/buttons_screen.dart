@@ -28,7 +28,6 @@ class _ButtonsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final colors = Theme.of(context).colorScheme;
     return SizedBox.expand(
       child: Padding(
@@ -87,25 +86,28 @@ class _ButtonsView extends StatelessWidget {
                         decorationStyle: TextDecorationStyle.solid,
                       ))),
               TextButton.icon(
-                style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(Colors.teal)
-                ),
+                  style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(Colors.teal)),
                   onPressed: () {},
                   icon: const Icon(Icons.person),
                   label: const Text('Text icon')),
 
-                  // TODO: custom button
-                  const CustomButton(),
+              // TODO: custom button
+              const CustomButton(),
 
-                  IconButton(
-                    onPressed: (){},
-                    icon: const Icon(Icons.app_registration_rounded),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(colors.primary),
-                      iconColor: MaterialStatePropertyAll(colors.inversePrimary)
-                    ),
-                  ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.app_registration_rounded),
+                style: ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(colors.primary),
+                    iconColor:
+                        MaterialStatePropertyAll(colors.inversePrimary)),
+              ),
 
+              //TODO: button background
+              const ButtonShadow(),
+              //TODO: button background red
+              const ButtonRedShadow(),
             ],
           ),
         ),
@@ -114,35 +116,97 @@ class _ButtonsView extends StatelessWidget {
   }
 }
 
+class ButtonRedShadow extends StatelessWidget {
+  const ButtonRedShadow({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      clipBehavior: Clip.hardEdge,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          boxShadow: const [
+            BoxShadow(
+                blurRadius: 25,
+                color: Color.fromARGB(255, 163, 6, 40),
+                offset: Offset(0, 10)),
+          ]),
+      child: Material(
+        color: const Color.fromRGBO(199, 3, 45, 1),
+        child: InkWell(
+          onTap: () {},
+          child: const Padding(
+            padding: EdgeInsets.symmetric(
+                vertical: 10.0, horizontal: 20.0),
+            child: Text('Sign Up'),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ButtonShadow extends StatelessWidget {
+  const ButtonShadow({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    return Container(
+        margin: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50.0),
+            boxShadow: [
+              const BoxShadow(
+                  color: Colors.black12, blurRadius: 10, offset: Offset(0, 5)),
+              const BoxShadow(
+                  color: Colors.white70, blurRadius: 10, offset: Offset(0, -5)),
+            ]),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(50),
+          child: Material(
+            child: InkWell(
+                onTap: () {},
+                child: Container(
+                  color: Colors.white70,
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 8.0, horizontal: 100.0),
+                  child: const Text('Sign In'),
+                )),
+          ),
+        ));
+  }
+}
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     final colors = Theme.of(context).colorScheme;
 
     return ClipRRect(
-      // borderRadius: BorderRadius.circular(50),
+      borderRadius: BorderRadius.circular(50),
       child: Material(
-        color:colors.primary,
-        borderRadius: BorderRadius.circular(50),
+        color: colors.primary,
         child: InkWell(
           // splashColor: Colors.red,
           // focusColor: Colors.black,
           // hoverColor: Colors.blue,
-          onTap: (){},
+          onTap: () {},
           child: const Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 20,
-              vertical: 10,
-            ),
-            child: Text(
-              'Hola Mundo',
-              style: TextStyle(
-                color: Colors.white
-              ),)),
+              padding: EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 10,
+              ),
+              child: Text(
+                'Hola Mundo',
+                style: TextStyle(color: Colors.white),
+              )),
         ),
       ),
     );
