@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_item.dart';
-import 'package:widgets_app/presentation/screens/screens.dart';
 
 class HomeScreen extends StatelessWidget {
-
   static const String name = 'home_screen';
 
   const HomeScreen({super.key});
@@ -38,8 +36,11 @@ class _HomeView extends StatelessWidget {
           ),
           title: Text(menuItem.title),
           subtitle: Text(menuItem.subTitle),
-          trailing: Icon(Icons.arrow_forward_ios_rounded,color: colors.primary,),
-          onTap: (){
+          trailing: Icon(
+            Icons.arrow_forward_ios_rounded,
+            color: colors.primary,
+          ),
+          onTap: () {
             //TODO:navegar a otra pantalla
             // Navigator.of(context).push(
             //   MaterialPageRoute(builder: (context) => ButtonsScreen(),)
@@ -48,11 +49,13 @@ class _HomeView extends StatelessWidget {
 
             // context.pushNamed(CardsScreen.name);
             context.push(menuItem.link);
-            
-
           },
         );
       },
     );
   }
 }
+
+// Route _createRoute(String link) =>
+//     PageRouteBuilder(
+//       pageBuilder: (context, animation, secondaryAnimation));
