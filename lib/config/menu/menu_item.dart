@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class MenuItem {
@@ -8,33 +6,32 @@ class MenuItem {
   final String link;
   final IconData icon;
 
-  const MenuItem({
-      required this.title,
+  const MenuItem(
+      {required this.title,
       required this.subTitle,
       required this.link,
-      required this.icon
-  });
-
+      required this.icon});
 }
 
-
-const appMenuItems = <MenuItem> [
+const appMenuItems = <MenuItem>[
   MenuItem(
-    title: 'Botones',
-    subTitle: 'Varios botones',
-    link: '/buttons',
-    icon: Icons.smart_button_outlined),
-  
+      title: 'Botones',
+      subTitle: 'Varios botones',
+      link: '/buttons',
+      icon: Icons.smart_button_outlined),
   MenuItem(
-    title: 'Tarjetas',
-    subTitle: 'Un contenedor estilizado',
-    link: '/cards',
-    icon: Icons.credit_card),
-
+      title: 'Tarjetas',
+      subTitle: 'Un contenedor estilizado',
+      link: '/cards',
+      icon: Icons.credit_card),
   MenuItem(
-    title: 'ProgressIndicators',
-    subTitle: 'Generales y controlados',
-    link: '/progress',
-    icon: Icons.refresh_rounded),
+      title: 'ProgressIndicators',
+      subTitle: 'Generales y controlados',
+      link: '/progress',
+      icon: Icons.refresh_rounded),
+  MenuItem(
+      title: 'SnackBars y diálogos',
+      subTitle: 'Indicadores en pantalla',
+      link: '/snackbars',
+      icon: Icons.info_outline_rounded)
 ];
-

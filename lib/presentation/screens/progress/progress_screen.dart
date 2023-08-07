@@ -77,7 +77,7 @@ class _ControlledProgressIndicator extends StatelessWidget {
               ),
               Expanded(
                   child: LinearProgressIndicator(
-                value:progressValue,
+                  value:progressValue,
               )),
             ],
           ),
