@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../presentation/screens/screens.dart';
 
 final appRouter = GoRouter(initialLocation: '/', routes: [
@@ -41,10 +38,17 @@ final appRouter = GoRouter(initialLocation: '/', routes: [
       name: AppTutorialScreen.name,
       builder: (context, state) => const AppTutorialScreen()),
   GoRoute(
-    path: '/infinite',
-    name: InfiniteScrollScreen.name,
-    builder: (context,state) => const InfiniteScrollScreen()
-  )
+      path: '/infinite',
+      name: InfiniteScrollScreen.name,
+      builder: (context, state) => const InfiniteScrollScreen()),
+  GoRoute(
+      path: '/counter-river',
+      name: CounterScreen.name,
+      builder: (context, state) => const CounterScreen()),
+  GoRoute(
+      path: '/theme-changer',
+      name: ThemeChangerScreen.name,
+      builder: (context, state) => const ThemeChangerScreen()),
   // GoRoute(
   //     path: '/users/:number',
   //     builder: (context, state) => CardsScreen(number: state.pathParameters[]),
